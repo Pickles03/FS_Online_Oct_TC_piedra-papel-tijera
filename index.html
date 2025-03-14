@@ -4,15 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-  <title>Piedra, papel, tijera</title>
+  <title>Rock, paper, scissors</title>
 </head>
 <body>
-  <button class="boton-jugada" data-jugada="piedra">Piedra</button>
-  <button class="boton-jugada" data-jugada="papel">Papel</button>
-  <button class="boton-jugada" data-jugada="tijera">Tijera</button>
-  <div id="resultados"></div>
-  <p id="contador-usuario">Tus puntos: 0</p>
-  <p id="contador-ordenador">Puntos de la máquina: 0</p>
+
+
+  <h1 class="title">Rock - Paper - Scissors</h1>
+  
+  <div id="containerpos">
+    <div id="container">
+      <div id="playerChoices">
+        <button class="rock"  onclick = "playGame('rock')">🪨</button>
+        <button class="paper" onclick="playGame('paper')">🧻</button>
+        <buttond class="scissors" onclick="playGame('scissors')">✂️</button> <!-- it will run a function when the button is clicked (same goes for the other two) -->
+      </div>
+      <div class="tags">
+        <div id="user">Player: </div>
+        <div id="computer">Computer: </div>
+        <div id="results">Results: </div>
+      </div>
+    </div>
+  </div>
+
+
+ <!-- <div class="extra">
+   <button class="big-button">don't</button>
+   <button class="big-button">push</button>
+   <button class="big-button">me</button>
+
+ </div> -->
+
   <script src="./js/script.js"></script>
 </body>
 </html>

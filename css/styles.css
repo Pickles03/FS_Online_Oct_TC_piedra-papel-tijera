@@ -1,16 +1,118 @@
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f4f4f4;
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-image: linear-gradient(250deg, rgb(255, 255, 255), rgb(198, 167, 141));
 }
-.boton-jugada {
-  background-color: #3498db;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(127, 218, 214);
+    text-shadow: #000000 2px 2px 5px; /* the last 5px is the blur radius */
+    padding-top: 40px;
 }
-#resultados {
-  font-size: 20px;
-  margin: 20px 0;
+
+.title {
+    font-size: 30px;
+    color: #000000;
+    text-shadow: 5px 5px 5 #ff005e, 10px 10px 0 #00d4ff; /* since, there are two shadows - we write it twice; the last 0 is the blur radius */
+    animation: shadow-dance 2s infinite;
+}
+
+@keyframes shadow-dance {
+    0%, 100% {
+        text-shadow: 5px 5px 0 #ff005e, 10px 10px 0 #00d4ff; /*the first one is offset by 5px to the right and 5px down, the next just doubles that ro create a layered effect*/
+    }
+    50% {
+        text-shadow: -5px -5px 0 #00d4ff, -10px -10px 0 #ff005e;
+    }
+}
+
+#containerpos {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+#containerpos:hover {
+    animation: containermove 1s infinite  alternate ease-in-out;
+}
+
+#container {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    flex-direction: column;
+    background-image: linear-gradient(90deg, rgb(204, 204, 220), rgb(136, 88, 207));
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #44454d;
+}
+
+@keyframes containermove {
+    0% {
+        translate: 0px 0px;
+    }
+    100% {
+        translate: 0px -10px;
+    }
+}
+
+
+#playerChoices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.rock, .paper, .scissors {
+   display: flex;
+   padding: 10px;
+   font-size: 50px;
+   border-radius: 10px;
+   border: none;
+   background-color: rgba(255, 255, 255, 0.5);
+   transition: 0.2s alternate ease;
+   animation: iconsMove 2s alternate ease-in-out;
+   
+}
+
+.rock:hover, .paper:hover, .scissors:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 5px 5px 5px #837089;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+@keyframes iconsMove {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.tags {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 10px;
+}
+
+#user, #computer, #results {
+    font-size: 20px;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    text-shadow: 2px 2px 5px #fffafc;
+    font-weight: bold;
 }
